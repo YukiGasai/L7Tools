@@ -108,7 +108,7 @@ Run, %A_WorkingDir%\Links\%Browser% "https://www.instagram.com" " --new-tab "
 return
 
 f15 & j::
-
+Run, %A_WorkingDir%\Links\Juice.vbs
 return
 
 f15 & k::
@@ -135,6 +135,10 @@ f15 & p::
 Run, %A_WorkingDir%\Links\PNerv.bat
 return
 
+f15 & q::
+
+return
+
 f15 & r::
 Run, %A_WorkingDir%\Links\%Browser% "https://www.reddit.com/" " --new-tab "
 return
@@ -147,6 +151,10 @@ f15 & t::
 Run, %A_WorkingDir%\Links\%Browser% "https://www.twitch.tv/" " --new-tab "
 return
 
+f15 & u::
+
+return
+
 f15 & v::
 Run, %A_WorkingDir%\Links\Visual Studio Code.lnk
 return
@@ -155,8 +163,16 @@ f15 & w::
 Run, %A_WorkingDir%\Links\%Browser% "https://web.whatsapp.com" " --new-tab "
 return
 
+f15 & x::
+
+return
+
 f15 & y::
 Run, %A_WorkingDir%\Links\%Browser% "https://www.youtube.com/?hl=de&gl=DE" " --new-tab"
+return
+
+f15 & z::
+
 return
 
 

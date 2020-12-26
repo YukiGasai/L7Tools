@@ -17,7 +17,7 @@ If ProcessExists("spotify.exe") Then
 
 		 ;VOL+
 		 ;ControlSend  ( $title, $text,"","^{up}")
-		For $i = 1167 to 1237 Step 3
+		For $i = 1197 to 1267 Step 3
 			;ConsoleWrite( $i &":  " &MemoryReadPixel($i, 757, $hwnd) & "             -              ")
 			if MemoryReadPixel($i, 757, WinGetHandle($title, $text)) == 404040 Then
 			   ControlClick($title, $text, "", "left" , 1 , $i+1, 757)
