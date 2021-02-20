@@ -1,6 +1,6 @@
 ﻿EnvGet, OutputVar, LOCALAPPDATA
 
-Browser = Vivaldi.lnk
+Browser = Chrome.lnk
 
 ^!t::
 Run, %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -p Ubuntu -d "\\wsl$\Ubuntu\home\ad"
@@ -15,6 +15,11 @@ Run, C:\_dev\FHEGetMarks\note.bat
 return
 
 
+
+;=====================
+;Change Sound output
+;=====================
+
 f15 & 1::
 Run, nircmd setdefaultsounddevice "Aux Kabel" 1
 return
@@ -26,6 +31,11 @@ return
 f15 & 3::
 Run, nircmd setdefaultsounddevice "Blue" 1
 return
+
+
+;=====================
+;Change MAIN Volume
+;=====================
 
 f15 & WheelDown::
 Send {Volume_Down}  
@@ -39,21 +49,44 @@ f15 & MButton::
 Send {Volume_Mute} 
 return
 
-f14 & WheelDown::
+;=====================
+;Controll BROWSER 
+;=====================
+f13 & WheelDown::
 	SoundBeep, 750, 100
-run nircmd exec hide .\ChangeVol.bat Vivaldi.exe -0.05
+run nircmd exec hide .\ChangeVol.bat Chrome.exe -0.05
 return
 
-f14 & WheelUp::
+f13 & WheelUp::
 	SoundBeep, 750, 100 
-run nircmd exec hide .\ChangeVol.bat Vivaldi.exe +0.05
+run nircmd exec hide .\ChangeVol.bat Chrome.exe +0.05
 return
 
-f14 & MButton::
+f13 & MButton::
 	SoundBeep, 750, 100 
-run nircmd exec hide .\MuteVol.bat Vivaldi.exe 2
+run nircmd exec hide .\MuteVol.bat Chrome.exe 2
 return
 
+f13 & LButton::
+	Send {Browser_Back}
+return
+
+f13 & RButton::
+	Send {Browser_Forward}
+return
+
+f13 & f17::
+	Send {Ctrl Down}t{Ctrl Up}
+return
+
+f13 & f16::
+	Send {Ctrl Down}T{Ctrl Up}
+return
+
+
+;=====================
+;Change DISCORD Volume
+;=====================
 
 f17 & WheelDown::
 	SoundBeep, 550, 100 
@@ -69,6 +102,62 @@ f17 & MButton::
 	SoundBeep, 550, 100 
 run nircmd exec hide .\MuteVol.bat Discord.exe 2
 return
+
+
+;=====================
+;Controll Spotify
+;=====================
+
+
+;Volume down on Spotify
+f14 & WheelDown::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 1
+Return
+
+;Mute unmute Spotify
+f14 & MButton::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 2
+Return
+
+;Volume up on Spotify
+f14 & WheelUp::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 3
+Return
+
+;Get Previous Song
+f14 & LButton::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 4
+Return
+
+;Pause
+f14 & f17::
+	Run, %A_WorkingDir%\SpotiKey\SpotiKey.exe 5
+Return
+
+;Get Next Song
+f14 & RButton::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 6
+Return
+
+;hide/ hide Spotify
+f14 & f16::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 7
+Return
+
+;Like song
+f14 & f13::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 8
+Return
+
+;Get Lyrics
+f14 & f15::
+	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 9
+Return
+
+
+;===========================================
+;Simple Hotkeys to start Programs  using f15
+;===========================================
 
 
 f15 & a::
@@ -104,7 +193,7 @@ Run, %A_WorkingDir%\Links\GemischtesHack.vbs
 return
 
 f15 & i::
-Run, %A_WorkingDir%\Links\%Browser% "https://www.instagram.com" " --new-tab "
+Run, %A_WorkingDir%\Links\IntelliJ.lnk
 return
 
 f15 & j::
@@ -176,11 +265,17 @@ f15 & z::
 return
 
 
+
+;============================================
+; SPecial Hotkeys to do stuff       Using f14
+;============================================
+
+
 ;Googled text der Nach drücken eingegeben wird 
 ;Bestätigen mit Enter 
 ;Abbrechen mit Escape
 
-f15 & f17::
+f13 & f14::
 
 	SoundBeep, 750, 750 
 	Input , Search, M, {Enter}{Escape}{F13}{F14}{F15}{F16}{F17}
@@ -212,12 +307,16 @@ f15 & f17::
 	}
 return
 
-f15 & Shift::
+
+;	
+;Lower text when it its all caps
+;
+f14 & Shift::
 	oCB := ClipboardAll
 	Send, ^c
 	ClipWait,1
 	
-	StringLower, ClipBoard, ClipBoard
+	Stringlower, ClipBoard, ClipBoard
 	
 	Send, ^v     
 
@@ -225,6 +324,10 @@ f15 & Shift::
 return
 
 
+
+;	
+;Google selected text
+;
 f14 & c::
 {
 
@@ -246,3 +349,12 @@ f14 & v::
 
  Return
 }
+
+
+
+
+
+
+
+
+
