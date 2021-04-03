@@ -1,6 +1,37 @@
 ﻿EnvGet, OutputVar, LOCALAPPDATA
 
-Browser = Chrome.lnk
+AudioDevice1 = "Aux Kabel"
+AudioDevice2 = "Monitor"
+AudioDevice3 = "Blue"
+
+BrowserPath =  % DefaultBrowser()
+SplitPath, BrowserPath , BrowseExe
+
+if(BrowseExe = "Launcher.exe"){
+	BrowseExe = "opera.exe"
+}
+
+
+DefaultBrowser() {
+	; Find the Registry key name for the default browser
+	RegRead, BrowserKeyName, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice, Progid
+
+	; Find the executable command associated with the above Registry key
+	RegRead, BrowserFullCommand, HKEY_CLASSES_ROOT, %BrowserKeyName%\shell\open\command
+
+	; The above RegRead will return the path and executable name of the brower contained within quotes and optional parameters
+	; We only want the text contained inside the first set of quotes which is the path and executable
+	; Find the ending quote position (we know the beginning quote is in position 0 so start searching at position 1)
+	StringGetPos, pos, BrowserFullCommand, ",,1
+
+	; Decrement the found position by one to work correctly with the StringMid function
+	pos := --pos
+
+
+	StringMid, BrowserPathandEXE, BrowserFullCommand, 2, %pos%
+	
+	Return BrowserPathandEXE
+}
 
 ^!t::
 Run, %LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -p Ubuntu -d "\\wsl$\Ubuntu\home\ad"
@@ -21,15 +52,15 @@ return
 ;=====================
 
 f15 & 1::
-Run, nircmd setdefaultsounddevice "Aux Kabel" 1
+Run, nircmd setdefaultsounddevice %AudioDevice1% 1
 return
 
 f15 & 2::
-Run, nircmd setdefaultsounddevice "Monitor" 1
+Run, nircmd setdefaultsounddevice %AudioDevice2% 1
 return
 
 f15 & 3::
-Run, nircmd setdefaultsounddevice "Blue" 1
+Run, nircmd setdefaultsounddevice %AudioDevice3% 1
 return
 
 
@@ -54,17 +85,17 @@ return
 ;=====================
 f13 & WheelDown::
 	SoundBeep, 750, 100
-run nircmd exec hide .\ChangeVol.bat Chrome.exe -0.05
+run nircmd exec hide .\ChangeVol.bat %BrowseExe% -0.05
 return
 
 f13 & WheelUp::
 	SoundBeep, 750, 100 
-run nircmd exec hide .\ChangeVol.bat Chrome.exe +0.05
+run nircmd exec hide .\ChangeVol.bat %BrowseExe% +0.05
 return
 
 f13 & MButton::
 	SoundBeep, 750, 100 
-run nircmd exec hide .\MuteVol.bat Chrome.exe 2
+run nircmd exec hide .\MuteVol.bat %BrowseExe% 2
 return
 
 f13 & LButton::
@@ -83,6 +114,21 @@ f13 & f16::
 	Send {Ctrl Down}T{Ctrl Up}
 return
 
+f13 & f14::
+	Send {Ctrl Down}w{Ctrl Up}
+return
+
+
+;; Wheel Scroll Tabs for Chrome stuff Google Chrome, VS CODE
+
+#IfWinActive ahk_class Chrome_WidgetWin_1 
+ f16 & WheelDown:: 
+ Send ^{PgUp} 
+ return 
+ f16 & WheelUp:: 
+    Send ^{PgDn} 
+Return 
+#IfWinActive
 
 ;=====================
 ;Change DISCORD Volume
@@ -165,11 +211,11 @@ Run, sndvol
 return
 
 f15 & b::
-Run, %A_WorkingDir%\Links\%Browser% "https://github.com/YukiGasai/BetterDiscord" " --new-tab "
+Run, %BrowserPath% "https://github.com/YukiGasai/BetterDiscord" 
 return
 
 f15 & c::
-Run, %A_WorkingDir%\Links\%Browser%
+Run, %BrowserPath%
 return
 
 f15 & d::
@@ -181,11 +227,11 @@ Run, explorer.exe
 return
 
 f15 & f::
-Run, %A_WorkingDir%\Links\%Browser% "https://fhemail.fh-erfurt.de/?_task=mail&_mbox=INBOX" " --new-tab "
+Run, %BrowserPath% "https://fhemail.fh-erfurt.de/?_task=mail&_mbox=INBOX" 
 return
 
 f15 & g::
-Run, %A_WorkingDir%\Links\%Browser% "https://github.com/YukiGasai" " --new-tab "
+Run, %BrowserPath% "https://github.com/YukiGasai" 
 return
 
 f15 & h::
@@ -209,11 +255,10 @@ Run, %A_WorkingDir%\Links\LeagueClient.exe.lnk
 return
 
 f15 & m::
-Run, %A_WorkingDir%\Links\%Browser% "https://moodle.fh-erfurt.de" " --new-tab "
-return
+Run, %BrowserPath% "https://moodle.fh-erfurt.de" 
 
 f15 & n::
-Run, %A_WorkingDir%\Links\%Browser% "https://www.netflix.com/" " --new-tab "
+Run, %BrowserPath% "https://www.netflix.com/"
 return
 
 f15 & o::
@@ -221,7 +266,7 @@ Run, %A_WorkingDir%\Links\osu!.lnk
 return
 
 f15 & p::
-Run, %A_WorkingDir%\Links\PNerv.bat
+Run, %A_WorkingDir%\Links\Project64.lnk
 return
 
 f15 & q::
@@ -229,7 +274,7 @@ f15 & q::
 return
 
 f15 & r::
-Run, %A_WorkingDir%\Links\%Browser% "https://www.reddit.com/" " --new-tab "
+Run, %BrowserPath% "https://www.reddit.com/" 
 return
 
 f15 & s::
@@ -237,11 +282,11 @@ Run, %A_WorkingDir%\Links\Steam.lnk
 return
 
 f15 & t::
-Run, %A_WorkingDir%\Links\%Browser% "https://www.twitch.tv/" " --new-tab "
+Run, %BrowserPath% "https://www.twitch.tv/" 
 return
 
 f15 & u::
-
+Run, %A_WorkingDir%\Links\Uplay.lnk
 return
 
 f15 & v::
@@ -249,15 +294,15 @@ Run, %A_WorkingDir%\Links\Visual Studio Code.lnk
 return
 
 f15 & w::
-Run, %A_WorkingDir%\Links\%Browser% "https://web.whatsapp.com" " --new-tab "
+Run, %BrowserPath% "https://web.whatsapp.com" 
 return
 
 f15 & x::
-
+Run, %A_WorkingDir%\Links\XAMPP.lnk
 return
 
 f15 & y::
-Run, %A_WorkingDir%\Links\%Browser% "https://www.youtube.com/?hl=de&gl=DE" " --new-tab"
+Run, %BrowserPath% "https://www.youtube.com/?hl=de&gl=DE" 
 return
 
 f15 & z::
@@ -275,7 +320,7 @@ return
 ;Bestätigen mit Enter 
 ;Abbrechen mit Escape
 
-f13 & f14::
+f24 & f14::
 
 	SoundBeep, 750, 750 
 	Input , Search, M, {Enter}{Escape}{F13}{F14}{F15}{F16}{F17}
@@ -288,7 +333,7 @@ f13 & f14::
 			return
 		}else{
 			SearchString := uriEncode(Search)
-			Run, %A_WorkingDir%\Links\%Browser% "https://duckduckgo.com/?q="%SearchString%
+			Run, %BrowserPath% "https://duckduckgo.com/?q="%SearchString%
 		}
 	}
 	
@@ -352,9 +397,16 @@ f14 & v::
 
 
 
+f17 & f16::
+{
+ Run, osk.exe
+ Return
+}
 
-
-
-
+f16 & f17::
+{
+ Run, osk.exe
+ Return
+}
 
 

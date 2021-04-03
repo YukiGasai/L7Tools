@@ -1,0 +1,148 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "L7Installer/1.0.0": {
+        "dependencies": {
+          "LibGit2Sharp": "0.27.0-preview-0096",
+          "Microsoft.CodeAnalysis.FxCopAnalyzers": "3.3.2"
+        },
+        "runtime": {
+          "L7Installer.dll": {}
+        }
+      },
+      "LibGit2Sharp/0.27.0-preview-0096": {
+        "dependencies": {
+          "LibGit2Sharp.NativeBinaries": "2.0.312"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/LibGit2Sharp.dll": {
+            "assemblyVersion": "0.27.0.0",
+            "fileVersion": "0.27.0.0"
+          }
+        }
+      },
+      "LibGit2Sharp.NativeBinaries/2.0.312": {
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libgit2-6777db8.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libgit2-6777db8.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libgit2-6777db8.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libgit2-6777db8.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx/native/libgit2-6777db8.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/git2-6777db8.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.28.0.0"
+          },
+          "runtimes/win-x64/native/git2-6777db8.pdb": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/git2-6777db8.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.28.0.0"
+          },
+          "runtimes/win-x86/native/git2-6777db8.pdb": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.FxCopAnalyzers/3.3.2": {
+        "dependencies": {
+          "Microsoft.CodeAnalysis.VersionCheckAnalyzer": "3.3.2",
+          "Microsoft.CodeQuality.Analyzers": "3.3.2",
+          "Microsoft.NetCore.Analyzers": "3.3.2",
+          "Microsoft.NetFramework.Analyzers": "3.3.2"
+        }
+      },
+      "Microsoft.CodeAnalysis.VersionCheckAnalyzer/3.3.2": {},
+      "Microsoft.CodeQuality.Analyzers/3.3.2": {},
+      "Microsoft.NetCore.Analyzers/3.3.2": {},
+      "Microsoft.NetFramework.Analyzers/3.3.2": {}
+    }
+  },
+  "libraries": {
+    "L7Installer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibGit2Sharp/0.27.0-preview-0096": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ANrnLBCGLtKSA0PSN4YdBo20FzE79GecdZeo6sRSWhMkI4BbENtzLSUqL1uzmNsahoepcXplQPHyMfzkGuYV1A==",
+      "path": "libgit2sharp/0.27.0-preview-0096",
+      "hashPath": "libgit2sharp.0.27.0-preview-0096.nupkg.sha512"
+    },
+    "LibGit2Sharp.NativeBinaries/2.0.312": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sL4OLOblkrLgDW+zE0OL4h9DYVCyZTlA4CppUCgqU8Ud/+Ah+Wxc3EtGpGjmH6xjDMRRpmHUFgAgzj+hzZTHZA==",
+      "path": "libgit2sharp.nativebinaries/2.0.312",
+      "hashPath": "libgit2sharp.nativebinaries.2.0.312.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.FxCopAnalyzers/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QlaP2SgpkiV5fnDgC1WwG3blfXIvz5WSPkA/R/AjKRwOLTGU1YLE3PArkvTz1ZtLCuXs29Qp3iY2fja7wF0iEg==",
+      "path": "microsoft.codeanalysis.fxcopanalyzers/3.3.2",
+      "hashPath": "microsoft.codeanalysis.fxcopanalyzers.3.3.2.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.VersionCheckAnalyzer/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KTqeVJjGfwDX7/AGDgBXErYX/8Etjwu8Zg2TgmmjVPZReVZk4KLv5fpEiTtoBXis3AO+OM/Qu4cQfz828RSmDQ==",
+      "path": "microsoft.codeanalysis.versioncheckanalyzer/3.3.2",
+      "hashPath": "microsoft.codeanalysis.versioncheckanalyzer.3.3.2.nupkg.sha512"
+    },
+    "Microsoft.CodeQuality.Analyzers/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WwR96abpowLKCJ/+hREuBu58zbTBCiFLQx5FjAUAYrgtuIQsg+jRtv4n9gKw6zxydnO+jd5aFJB6H+eqGqQufw==",
+      "path": "microsoft.codequality.analyzers/3.3.2",
+      "hashPath": "microsoft.codequality.analyzers.3.3.2.nupkg.sha512"
+    },
+    "Microsoft.NetCore.Analyzers/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L9lU2E9SaK8znn8ZkstOx8jjpYmsBTvt3xIW6btPM/Fi8m7zSK80itHV0p6f23q84uvyXS8ibECjP0Vra99zsQ==",
+      "path": "microsoft.netcore.analyzers/3.3.2",
+      "hashPath": "microsoft.netcore.analyzers.3.3.2.nupkg.sha512"
+    },
+    "Microsoft.NetFramework.Analyzers/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfmC8NoxrRtw2PSmqSu+kVTcsJuMhspxWKbVzrtPxw+O8hjpCPzD0IttCUJclDf36qkmScvvd1BgRHYE17zF9g==",
+      "path": "microsoft.netframework.analyzers/3.3.2",
+      "hashPath": "microsoft.netframework.analyzers.3.3.2.nupkg.sha512"
+    }
+  }
+}
