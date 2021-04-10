@@ -219,7 +219,7 @@ Run, %BrowserPath%
 return
 
 f15 & d::
-Run, %A_WorkingDir%\Links\Discord.lnk
+Run, C:\Users\Richard\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk
 return
 
 f15 & e::
@@ -235,15 +235,15 @@ Run, %BrowserPath% "https://github.com/YukiGasai"
 return
 
 f15 & h::
-Run, %A_WorkingDir%\Links\GemischtesHack.vbs
+Run, C:\_dev\L7Tools\AHK\Links\GemischtesHack.vbs
 return
 
 f15 & i::
-Run, %A_WorkingDir%\Links\IntelliJ.lnk
+Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\JetBrains\IntelliJ IDEA Community Edition 2020.2.3.lnk
 return
 
 f15 & j::
-Run, %A_WorkingDir%\Links\Juice.vbs
+Run, C:\_dev\L7Tools\AHK\Links\Juice.vbs
 return
 
 f15 & k::
@@ -251,7 +251,7 @@ f15 & k::
 return
 
 f15 & l::
-Run, %A_WorkingDir%\Links\LeagueClient.exe.lnk
+Run, C:\Users\Public\Desktop\VALORANT.lnk
 return
 
 f15 & m::
@@ -262,11 +262,11 @@ Run, %BrowserPath% "https://www.netflix.com/"
 return
 
 f15 & o::
-Run, %A_WorkingDir%\Links\osu!.lnk
+Run, ‪C:\Users\Richard\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\osu!.lnk
 return
 
 f15 & p::
-Run, %A_WorkingDir%\Links\Project64.lnk
+Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Project64 2.3\Project64.lnk
 return
 
 f15 & q::
@@ -278,7 +278,7 @@ Run, %BrowserPath% "https://www.reddit.com/"
 return
 
 f15 & s::
-Run, %A_WorkingDir%\Links\Steam.lnk
+Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam\Steam.lnk
 return
 
 f15 & t::
@@ -286,11 +286,11 @@ Run, %BrowserPath% "https://www.twitch.tv/"
 return
 
 f15 & u::
-Run, %A_WorkingDir%\Links\Uplay.lnk
+Run, C:\Users\Richard\AppData\Roaming\Microsoft\Windows\Start Menu\Uplay.lnk
 return
 
 f15 & v::
-Run, %A_WorkingDir%\Links\Visual Studio Code.lnk
+Run, C:\Users\Richard\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code\Visual Studio Code.lnk
 return
 
 f15 & w::
@@ -298,7 +298,7 @@ Run, %BrowserPath% "https://web.whatsapp.com"
 return
 
 f15 & x::
-Run, %A_WorkingDir%\Links\XAMPP.lnk
+Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\XAMPP\XAMPP Control Panel.lnk
 return
 
 f15 & y::
