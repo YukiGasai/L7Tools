@@ -151,47 +151,47 @@ return
 
 ;Volume down on Spotify
 $$Key2$$ & WheelDown::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 1
+	Run,  %A_WorkingDir%\SpotiKey.exe 1
 Return
 
 ;Mute unmute Spotify
 $$Key2$$ & MButton::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 2
+	Run,  %A_WorkingDir%\SpotiKey.exe 2
 Return
 
 ;Volume up on Spotify
 $$Key2$$ & WheelUp::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 3
+	Run,  %A_WorkingDir%\SpotiKey.exe 3
 Return
 
 ;Get Previous Song
 $$Key2$$ & LButton::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 4
+	Run,  %A_WorkingDir%\SpotiKey.exe 4
 Return
 
 ;Pause
 $$Key2$$ & $$Key5$$::
-	Run, %A_WorkingDir%\SpotiKey\SpotiKey.exe 5
+	Run, %A_WorkingDir%\SpotiKey.exe 5
 Return
 
 ;Get Next Song
 $$Key2$$ & RButton::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 6
+	Run,  %A_WorkingDir%\SpotiKey.exe 6
 Return
 
 ;hide/ hide Spotify
 $$Key2$$ & $$Key4$$::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 7
+	Run,  %A_WorkingDir%\SpotiKey.exe 7
 Return
 
 ;Like song
 $$Key2$$ & $$Key1$$::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 8
+	Run,  %A_WorkingDir%\SpotiKey.exe 8
 Return
 
 ;Get Lyrics
 $$Key2$$ & $$Key3$$::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 9
+	Run,  %A_WorkingDir%\SpotiKey.exe 9
 Return
 
 
