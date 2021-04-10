@@ -208,18 +208,31 @@ $$KEYBOARDKEYS$$
 ; SPecial Hotkeys to do stuff       Using $$Key2$$
 ;============================================
 
-;;POP up On Screen Keyboard
-$$Key5$$ & $$Key4$$::
+$$KEY5$$ & $$KEY4$$::
 {
- Run, osk.exe
- Return
+Process, Exist, osk.exe ; check to see if osk is running
+		{
+		If errorLevel = 0
+			Run, osk.exe
+		else
+			run,%comspec% /k wmic process where name="osk.exe" call terminate && exit
+		}
+return
 }
 
-$$Key4$$ & $$Key5$$::
+
+$$KEY4$$ & $$KEY5$$::
 {
- Run, osk.exe
- Return
+Process, Exist, osk.exe ; check to see if osk is running
+		{
+		If errorLevel = 0
+			Run, osk.exe
+		else
+			run,%comspec% /k wmic process where name="osk.exe" call terminate && exit
+		}
+return
 }
+
 
 
 ;	

@@ -157,47 +157,47 @@ return
 
 ;Volume down on Spotify
 f14 & WheelDown::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 1
+	Run,  %A_WorkingDir%\SpotiKey.exe 1
 Return
 
 ;Mute unmute Spotify
 f14 & MButton::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 2
+	Run,  %A_WorkingDir%\SpotiKey.exe 2
 Return
 
 ;Volume up on Spotify
 f14 & WheelUp::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 3
+	Run,  %A_WorkingDir%\SpotiKey.exe 3
 Return
 
 ;Get Previous Song
 f14 & LButton::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 4
+	Run,  %A_WorkingDir%\SpotiKey.exe 4
 Return
 
 ;Pause
 f14 & f17::
-	Run, %A_WorkingDir%\SpotiKey\SpotiKey.exe 5
+	Run, %A_WorkingDir%\SpotiKey.exe 5
 Return
 
 ;Get Next Song
 f14 & RButton::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 6
+	Run,  %A_WorkingDir%\SpotiKey.exe 6
 Return
 
 ;hide/ hide Spotify
 f14 & f16::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 7
+	Run,  %A_WorkingDir%\SpotiKey.exe 7
 Return
 
 ;Like song
 f14 & f13::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 8
+	Run,  %A_WorkingDir%\SpotiKey.exe 8
 Return
 
 ;Get Lyrics
 f14 & f15::
-	Run,  %A_WorkingDir%\SpotiKey\SpotiKey.exe 9
+	Run,  %A_WorkingDir%\SpotiKey.exe 9
 Return
 
 
@@ -399,14 +399,28 @@ f14 & v::
 
 f17 & f16::
 {
- Run, osk.exe
- Return
+Process, Exist, osk.exe ; check to see if osk is running
+		{
+		If errorLevel = 0
+			Run, osk.exe
+		else
+			run,%comspec% /k wmic process where name="osk.exe" call terminate && exit
+		}
+return
 }
+
 
 f16 & f17::
 {
- Run, osk.exe
- Return
+Process, Exist, osk.exe ; check to see if osk is running
+		{
+		If errorLevel = 0
+			Run, osk.exe
+		else
+			run,%comspec% /k wmic process where name="osk.exe" call terminate && exit
+		}
+return
 }
+
 
 
